@@ -5,6 +5,45 @@
   color: var(--bodyText);
 }
 
+.counterPanel {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(50, 49, 48, 0.12);
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.actions {
+  margin-top: 1rem;
+}
+
+.saveButton {
+  min-width: 14rem;
+  padding: 0.75rem 1rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: "[theme:themePrimary, default: #0078d4]";
+  background: var(--themePrimary, #0078d4);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.metaText {
+  margin: 0.75rem 0 0;
+  font-size: 0.875rem;
+}
+
+.statusMessage {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}
+
 .welcome {
   text-align: center;
 }

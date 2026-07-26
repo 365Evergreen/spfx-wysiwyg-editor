@@ -14,6 +14,10 @@ import { MySpfxWebPartRoot } from './components/SpfxWebSiteEditor';
 
 export interface ISpfxWebSiteEditorWebPartProps {
   description: string;
+  pageJsonFieldName?: string;
+  exportSiteUrl?: string;
+  exportListTitle?: string;
+  exportJsonFieldName?: string;
 }
 
 export default class SpfxWebSiteEditorWebPart extends BaseClientSideWebPart<ISpfxWebSiteEditorWebPartProps> {
@@ -28,6 +32,14 @@ export default class SpfxWebSiteEditorWebPart extends BaseClientSideWebPart<ISpf
         isDarkTheme={this._isDarkTheme}
         environmentMessage={this._environmentMessage}
         userDisplayName={this.context.pageContext.user.displayName}
+        spHttpClient={this.context.spHttpClient}
+        siteUrl={this.context.pageContext.web.absoluteUrl}
+        pageListId={this.context.pageContext.list?.id.toString()}
+        pageItemId={this.context.pageContext.listItem?.id}
+        pageJsonFieldName={this.properties.pageJsonFieldName}
+        exportSiteUrl={this.properties.exportSiteUrl}
+        exportListTitle={this.properties.exportListTitle}
+        exportJsonFieldName={this.properties.exportJsonFieldName}
       />
     );
 
@@ -103,6 +115,22 @@ export default class SpfxWebSiteEditorWebPart extends BaseClientSideWebPart<ISpf
               groupFields: [
                 PropertyPaneTextField('description', {
                   label: strings.DescriptionFieldLabel
+                }),
+                PropertyPaneTextField('pageJsonFieldName', {
+                  label: 'Page JSON field internal name',
+                  description: 'Column on the current page item used to store the Editor.js JSON. Defaults to EditorJson.'
+                }),
+                PropertyPaneTextField('exportSiteUrl', {
+                  label: 'Export site URL',
+                  description: 'Target site for JSON export. Leave blank to use the current site.'
+                }),
+                PropertyPaneTextField('exportListTitle', {
+                  label: 'Export list title',
+                  description: 'List that will receive exported JSON snapshots.'
+                }),
+                PropertyPaneTextField('exportJsonFieldName', {
+                  label: 'Export JSON field internal name',
+                  description: 'Multiline text field on the export list used to store the JSON. Defaults to ContentJson.'
                 })
               ]
             }

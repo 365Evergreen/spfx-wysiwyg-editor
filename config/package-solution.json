@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "spfx-wysiwyg-editor-client-side-solution",
+    "id": "f771728d-6e01-4741-8364-03f46dbad4e8",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.23.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "spfx-wysiwyg-editor description"
+      },
+      "longDescription": {
+        "default": "spfx-wysiwyg-editor description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "spfx-wysiwyg-editor Feature",
+        "description": "The feature that activates elements of the spfx-wysiwyg-editor solution.",
+        "id": "e9c6c7c7-e647-4b92-b0b3-e95ae84f974c",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/spfx-wysiwyg-editor.sppkg"
+  }
+}
